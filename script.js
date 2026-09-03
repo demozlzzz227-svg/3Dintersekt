@@ -1,0 +1,3 @@
+const toggle=document.querySelector('.menu-toggle');const menu=document.querySelector('.nav-menu');if(toggle){toggle.addEventListener('click',()=>{menu.classList.toggle('open');toggle.setAttribute('aria-expanded',menu.classList.contains('open'))})}
+document.querySelectorAll('form[data-demo]').forEach(form=>form.addEventListener('submit',e=>{e.preventDefault();const notice=form.querySelector('.notice');if(notice){notice.style.display='block';notice.textContent='Thanks. Your request has been received. We will contact you shortly.'}form.reset()}));
+document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
