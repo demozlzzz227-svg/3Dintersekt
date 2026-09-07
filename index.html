@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BR2 Barbershop in Bromley. Professional men's haircuts, fades and beard grooming." />
+  <title>BR2 Barbershop — Bromley</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7f7f3;
+      --paper:#ffffff;
+      --ink:#111a24;
+      --muted:#68717a;
+      --line:#e3e5df;
+      --green:#39c928;
+      --yellow:#ffd51b;
+      --blue:#2677e8;
+      --dark:#101923;
+      --radius:20px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif}
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%;object-fit:cover}
+    .container{width:min(calc(100% - 48px),var(--max));margin:auto}
+    .nav{height:78px;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);display:flex;align-items:center;position:sticky;top:0;z-index:20;backdrop-filter:blur(14px)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;width:min(calc(100% - 48px),var(--max));margin:auto}
+    .logo{width:105px}
+    .nav-links{display:flex;gap:32px;font-size:13px;font-weight:600}
+    .nav-links a{position:relative;padding:30px 0}
+    .nav-links a:hover:after,.nav-links a.active:after{content:"";position:absolute;left:0;right:0;bottom:20px;height:3px;background:var(--green);border-radius:3px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid transparent;padding:13px 19px;border-radius:8px;font-size:13px;font-weight:700;transition:.2s ease;cursor:pointer}
+    .btn-green{background:var(--green);color:#09200a}
+    .btn-green:hover{transform:translateY(-2px);filter:saturate(1.05)}
+    .btn-outline{background:transparent;border-color:#1d2730;color:var(--ink)}
+    .btn-outline:hover{background:var(--ink);color:white}
+    .hero{padding:0 0 0}
+    .hero-grid{display:grid;grid-template-columns:42% 58%;min-height:570px}
+    .hero-copy{padding:75px 48px 65px max(24px,calc((100vw - var(--max))/2))}
+    .eyebrow,.section-kicker{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+    .eyebrow:before,.section-kicker:before{content:"";width:18px;height:3px;background:var(--yellow);border-radius:3px}
+    h1,h2,h3{font-family:"Manrope",sans-serif;margin:0;letter-spacing:-.045em}
+    h1{font-size:clamp(48px,5.5vw,78px);line-height:.93;margin:24px 0 25px;font-weight:800}
+    .hero-copy p{max-width:460px;font-size:16px;line-height:1.65;color:var(--muted)}
+    .hero-actions{display:flex;gap:12px;margin-top:28px}
+    .rating{margin-top:28px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px}
+    .stars{color:#f1b900;font-size:17px;letter-spacing:1px}
+    .hero-media{position:relative;overflow:hidden}
+    .hero-media img{height:100%;min-height:570px}
+    .hero-tag{position:absolute;right:30px;bottom:30px;background:white;padding:14px 16px;border-radius:12px;font-family:"Manrope";font-weight:800;box-shadow:0 10px 35px rgba(0,0,0,.14)}
+    .hero-tag span{color:var(--green)}
+    .trust{background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .trust-item{padding:25px 20px;display:flex;gap:14px;align-items:center;border-right:1px solid var(--line)}
+    .trust-item:last-child{border-right:0}
+    .icon{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#eef1ed;font-weight:800}
+    .trust-item:nth-child(2) .icon{background:#e9f9e6}
+    .trust-item:nth-child(3) .icon{background:#fff5c8}
+    .trust-item:nth-child(4) .icon{background:#e8f0ff}
+    .trust-item strong{display:block;font-size:13px}
+    .trust-item small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+    section{padding:100px 0}
+    .services-head{display:grid;grid-template-columns:30% 1fr;gap:70px;align-items:end;margin-bottom:40px}
+    h2{font-size:clamp(38px,4.5vw,58px);line-height:.96;margin-top:17px}
+    .lead{color:var(--muted);line-height:1.65;max-width:430px}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+    .service{background:white;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .service:last-child{border-right:0}
+    .service img{height:205px}
+    .service-body{padding:20px}
+    .num{font-size:11px;color:var(--muted);font-weight:700}
+    .service h3{font-size:20px;margin:10px 0 8px;letter-spacing:-.03em}
+    .service p{font-size:12px;color:var(--muted);line-height:1.5;min-height:38px}
+    .service-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:12px;font-weight:700}
+    .experience{background:#fff}
+    .experience-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+    .experience-image{height:500px;border-radius:2px;overflow:hidden}
+    .experience-copy h2{max-width:530px}
+    .experience-copy>p{max-width:520px;color:var(--muted);line-height:1.7;margin:25px 0 30px}
+    .points{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+    .point{padding:22px 16px 0 0}
+    .point .dot{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;margin-bottom:13px}
+    .point:nth-child(1) .dot{background:#e5f9df}.point:nth-child(2) .dot{background:#fff2ae}.point:nth-child(3) .dot{background:#dfebff}
+    .point strong{font-size:13px}.point p{font-size:11px;line-height:1.5;color:var(--muted)}
+    .gallery-grid{display:grid;grid-template-columns:1.15fr .7fr .7fr;grid-template-rows:240px 240px;gap:12px}
+    .gallery-grid .g1{grid-row:1/3}
+    .gallery-grid img{height:100%}
+    .gallery-card{position:relative;overflow:hidden}
+    .gallery-card img{transition:transform .5s}
+    .gallery-card:hover img{transform:scale(1.04)}
+    .reviews{background:#f0f1ed}
+    .reviews-grid{display:grid;grid-template-columns:.65fr 1.2fr 1fr;gap:45px;align-items:start}
+    .big-rating{font-family:"Manrope";font-size:64px;font-weight:800;letter-spacing:-.06em}
+    .review-main{font-size:23px;line-height:1.35;font-weight:600;max-width:540px}
+    .review-author{font-size:12px;color:var(--muted);margin-top:20px}
+    .mini-reviews{display:grid;gap:12px}
+    .mini{background:white;border:1px solid var(--line);padding:20px;border-radius:12px}
+    .mini p{font-size:12px;line-height:1.55;margin:0 0 12px}
+    .mini small{color:var(--muted)}
+    .location{padding-bottom:90px}
+    .location-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:0;background:white;border:1px solid var(--line)}
+    .map{min-height:390px;background:#e7e9e4;position:relative;overflow:hidden}
+    .map img{height:100%;filter:saturate(.7)}
+    .map-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);background:#e5352f;color:white;width:42px;height:42px;border-radius:50% 50% 50% 0;rotate:-45deg;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+    .map-pin span{rotate:45deg}
+    .location-copy{padding:48px}
+    .location-copy h2{font-size:44px}
+    .details{margin:28px 0;border-top:1px solid var(--line)}
+    .detail{display:flex;gap:16px;padding:17px 0;border-bottom:1px solid var(--line);font-size:13px}
+    .detail b{min-width:100px}
+    .detail span{color:var(--muted)}
+    footer{background:var(--dark);color:white;padding:55px 0 25px}
+    .footer-top{display:flex;justify-content:space-between;align-items:start;gap:30px}
+    .footer-logo{width:105px;filter:brightness(1.1)}
+    footer nav{display:flex;gap:28px;font-size:12px;color:#dbe1e6}
+    .footer-social{display:flex;gap:14px;font-size:12px}
+    .copyright{border-top:1px solid rgba(255,255,255,.13);margin-top:45px;padding-top:18px;color:#9fa9b2;font-size:10px;display:flex;justify-content:space-between}
+    .mobile-menu{display:none;background:none;border:0;font-size:24px}
+    @media(max-width:900px){
+      .nav-links{display:none}.mobile-menu{display:block}
+      .hero-grid,.experience-grid,.location-grid,.reviews-grid{grid-template-columns:1fr}
+      .hero-copy{padding:55px 24px}.hero-media img{min-height:420px;height:420px}
+      .trust-grid{grid-template-columns:1fr 1fr}.trust-item:nth-child(2){border-right:0}
+      .services-head{grid-template-columns:1fr;gap:15px}.service-grid{grid-template-columns:1fr 1fr}
+      .service:nth-child(2){border-right:0}.experience-image{height:380px}
+      .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:250px 180px 180px}.gallery-grid .g1{grid-row:1/2;grid-column:1/3}
+      .reviews-grid{gap:30px}.location-copy{padding:35px 25px}
+      footer nav{display:none}
+    }
+    @media(max-width:560px){
+      .container{width:min(calc(100% - 32px),var(--max))}
+      .nav-inner{width:calc(100% - 32px)}.nav{height:70px}
+      .nav .btn{display:none}.logo,.footer-logo{width:90px}
+      h1{font-size:52px}.hero-actions{flex-direction:column;align-items:stretch}
+      section{padding:72px 0}.trust-grid,.service-grid,.points{grid-template-columns:1fr}
+      .trust-item{border-right:0;border-bottom:1px solid var(--line)}.trust-item:last-child{border-bottom:0}
+      .service{border-right:0}.service img{height:230px}
+      .gallery-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:220px 160px}
+      .gallery-grid .g1{grid-column:1/3;grid-row:auto}.gallery-grid .g4{display:none}
+      .footer-top{flex-direction:column}.copyright{display:block;line-height:1.7}
+    }
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" aria-label="BR2 home"><img class="logo" src="assets/br2-logo.png" alt="BR2 Barbershop logo placeholder" style="object-fit:contain;height:48px;background:transparent;mix-blend-mode:multiply"></a>
+    <nav class="nav-links">
+      <a class="active" href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-green" href="#contact">Book Now →</a>
+    <button class="mobile-menu" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">BR2 BARBER SHOP · BROMLEY</div>
+        <h1>FRESH CUTS.<br>REAL STYLE.<br><span style="color:var(--green)">BR2.</span></h1>
+        <p>Professional men's haircuts and grooming, tailored to your style. Quality service, friendly barbers, right here in Bromley.</p>
+        <div class="hero-actions">
+          <a class="btn btn-green" href="#contact">Book Your Cut →</a>
+          <a class="btn btn-outline" href="#services">View Services</a>
+        </div>
+        <div class="rating"><span class="stars">★★★★★</span><span>5.0</span><span style="color:var(--muted)">|</span><span>165+ reviews</span></div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/hero.svg" alt="Barber giving a clean fade haircut">
+        <div class="hero-tag">Good hair. <span>Good mood.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="container trust-grid">
+      <div class="trust-item"><div class="icon">✂</div><div><strong>Professional Cuts</strong><small>Modern styles & classic looks</small></div></div>
+      <div class="trust-item"><div class="icon">◯</div><div><strong>Personal Service</strong><small>Your style, our focus</small></div></div>
+      <div class="trust-item"><div class="icon">✓</div><div><strong>Attention to Detail</strong><small>Because it matters</small></div></div>
+      <div class="trust-item"><div class="icon">⌖</div><div><strong>Local & Trusted</strong><small>Proudly serving Bromley</small></div></div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="container">
+      <div class="services-head">
+        <div><div class="section-kicker">Our services</div><h2>Your style.<br>Our craft.</h2></div>
+        <p class="lead">From clean fades to full grooming, our services are designed to keep you looking and feeling your best.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service"><img src="assets/cut.svg" alt="Men's haircut"><div class="service-body"><span class="num">01</span><h3>Haircut</h3><p>Precision cuts tailored to your style.</p><div class="service-foot"><span>From £—</span><span>→</span></div></div></article>
+        <article class="service"><img src="assets/fade.svg" alt="Skin fade"><div class="service-body"><span class="num">02</span><h3>Skin Fade</h3><p>Clean fades with smooth blending and sharp finish.</p><div class="service-foot"><span>From £—</span><span>→</span></div></div></article>
+        <article class="service"><img src="assets/cut.svg" alt="Beard grooming"><div class="service-body"><span class="num">03</span><h3>Beard Trim</h3><p>Shape, define and maintain your beard.</p><div class="service-foot"><span>From £—</span><span>→</span></div></div></article>
+        <article class="service"><img src="assets/beard.svg" alt="Barber shop grooming"><div class="service-body"><span class="num">04</span><h3>Haircut + Beard</h3><p>The complete grooming experience.</p><div class="service-foot"><span>From £—</span><span>→</span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="experience">
+    <div class="container experience-grid">
+      <div class="experience-image"><img src="assets/shop.svg" alt="Modern barber shop interior"></div>
+      <div class="experience-copy">
+        <div class="section-kicker"><span style="background:var(--blue);width:18px;height:3px;border-radius:3px"></span> The BR2 experience</div>
+        <h2>No rush.<br>Just a good cut.</h2>
+        <p>Every client is different. That's why we take the time to understand what you want, refine the details and make sure you leave happy with the result.</p>
+        <div class="points">
+          <div class="point"><div class="dot">01</div><strong>Precision</strong><p>Every cut is finished with attention to detail.</p></div>
+          <div class="point"><div class="dot">02</div><strong>Personal</strong><p>Your style, your preference, your cut.</p></div>
+          <div class="point"><div class="dot">03</div><strong>Relaxed</strong><p>Professional service without the rush.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="services-head">
+        <div><div class="section-kicker">Our work</div><h2>The craft is in<br>the details.</h2></div>
+        <p class="lead">A visual look at the cuts, fades and grooming that define the BR2 experience.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card g1"><img src="assets/gallery1.svg" alt="Fresh haircut"></div>
+        <div class="gallery-card g2"><img src="assets/gallery2.svg" alt="Fade haircut"></div>
+        <div class="gallery-card g3"><img src="assets/gallery3.svg" alt="Barber working"></div>
+        <div class="gallery-card g4"><img src="assets/shop.svg" alt="Barbershop"></div>
+        <div class="gallery-card g5"><img src="assets/beard.svg" alt="Beard grooming"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <div class="container">
+      <div class="reviews-grid">
+        <div><div class="section-kicker">What our clients say</div><div class="big-rating">5.0 <span class="stars">★★★★★</span></div><small style="color:var(--muted)">165+ reviews</small></div>
+        <div><p class="review-main">“Great service, professional and friendly. Always leave feeling fresh and confident.”</p><div class="review-author">— BR2 client</div></div>
+        <div class="mini-reviews">
+          <div class="mini"><p>“Fantastic service, great atmosphere and always leave with a great cut.”</p><small>— Local client</small></div>
+          <div class="mini"><p>“Really professional and takes the time to get the details right.”</p><small>— Local client</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="location">
+    <div class="container">
+      <div class="location-grid">
+        <div class="map">
+          <img src="assets/map.svg" alt="Map-style location visual">
+          <div class="map-pin"><span>●</span></div>
+        </div>
+        <div class="location-copy">
+          <div class="section-kicker">Find us</div>
+          <h2>Your next cut is closer than you think.</h2>
+          <div class="details">
+            <div class="detail"><b>Address</b><span>129 Masons Hill, Bromley BR2 9HT</span></div>
+            <div class="detail"><b>Phone</b><span>+44 7830 880847</span></div>
+            <div class="detail"><b>Hours</b><span>Mon–Fri 09:00–19:00<br>Saturday 08:00–17:00<br>Sunday Closed</span></div>
+          </div>
+          <a class="btn btn-green" href="https://www.google.com/maps/search/?api=1&query=BR2+Barber+Shop+129+Masons+Hill+Bromley+BR2+9HT" target="_blank">Get Directions →</a>
+          <a class="btn btn-outline" style="margin-left:8px" href="tel:+447830880847">Call BR2</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div><div style="font-family:Manrope;font-size:32px;font-weight:800"><span style="color:var(--green)">B</span><span style="color:var(--yellow)">R</span><span style="color:var(--blue)">2</span></div><small style="font-weight:800;letter-spacing:.08em">BARBERSHOP</small></div>
+      <nav><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav>
+      <div class="footer-social"><span>Instagram</span><span>Facebook</span><span>Phone</span></div>
+    </div>
+    <div class="copyright"><span>© 2026 BR2 Barber Shop. All rights reserved.</span><span>Bromley, UK</span></div>
+  </div>
+</footer>
+<script>
+  document.querySelector('.mobile-menu').addEventListener('click',()=>alert('Mobile navigation can be connected to your preferred menu component.'));
+</script>
+</body>
+</html>
